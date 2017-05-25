@@ -48,6 +48,9 @@ import javax.ws.rs.core.Response;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Component;
 
 import com.ibm.mq.jms.JMSC;
 import com.ibm.mq.jms.MQQueueConnectionFactory;
@@ -66,13 +69,14 @@ import io.swagger.annotations.ApiResponses;
  * this class will be hosted in 'http://localhost:8181/cxf/crm/helloservice'.  An @Path("/customers") annotation on
  * one of the methods would result in 'http://localhost:8181/cxf/crm/helloservice/hello'.
  */
+@Component
 @SuppressWarnings("deprecation")
 @Path("/helloservice/")
 @Api(value = "/helloservice", description = "Operations about customerservice")
 @Consumes({ MediaType.APPLICATION_XML })
 @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 public class HelloService {
-
+	
     private static final Logger LOG = LoggerFactory.getLogger(HelloService.class);
 
     /**
