@@ -21,7 +21,7 @@
 		<docker.maven.plugin.version>0.13.6</docker.maven.plugin.version>
 		<cxf.plugin.version>3.0.4.redhat-621084</cxf.plugin.version>
 		<!-- Docker & Fabric8 Configs -->
-		<docker.from>jboss-fuse-6/fis-java-openshift:1.0</docker.from>
+		<docker.from>jdk</docker.from>
 		<fabric8.dockerUser>fabric8/</fabric8.dockerUser>
 		<docker.image>${fabric8.dockerUser}${project.artifactId}:${project.version}</docker.image>
 		<docker.port.container.jolokia>8778</docker.port.container.jolokia>
@@ -216,7 +216,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>hawt-app-maven-plugin</artifactId>
 				<version>${fabric8.version}</version>
@@ -231,7 +231,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin>
 
 			<plugin>
 				<groupId>org.jolokia</groupId>
