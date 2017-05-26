@@ -203,13 +203,13 @@
 				<artifactId>cxf-java2wadl-plugin</artifactId>
 				<version>${cxf.plugin.version}</version>
 				<executions>
-					<execution>
+<!-- 					<execution>
 						<id>parsejavadoc</id>
 						<phase>generate-sources</phase>
 						<goals>
 							<goal>parsejavadoc</goal>
 						</goals>
-					</execution>
+					</execution>  -->
 					<execution>
 						<id>process-classes</id>
 						<phase>process-classes</phase>
@@ -237,7 +237,7 @@
 							<goal>build</goal>
 						</goals>
 						<configuration>
-							<javaMainClass>io.fabric8.archetypes.HelloService</javaMainClass>
+							<javaMainClass>io.fabric8.archetypes.App</javaMainClass>
 						</configuration>
 					</execution>
 				</executions>
@@ -259,7 +259,7 @@
 								</assembly>
 								<env>
 									<JAVA_LIB_DIR>/deployments/lib</JAVA_LIB_DIR>
-									<!-- <JAVA_MAIN_CLASS>io.fabric8.archetypes.HelloService</JAVA_MAIN_CLASS> -->
+									<JAVA_MAIN_CLASS>io.fabric8.archetypes.App</JAVA_MAIN_CLASS>
 								</env>
 							</build>
 						</image>
@@ -273,7 +273,7 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.4.0</version>
 				<configuration>
-					<mainClass>io.fabric8.archetypes.HelloService</mainClass>
+					<mainClass>io.fabric8.archetypes.App</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
